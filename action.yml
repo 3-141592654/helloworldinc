@@ -5,7 +5,13 @@ runs:
   using: "composite"
   steps:
     - name: Set up C environment
-      run: sudo apt-get update && sudo apt-get -y install build-essential
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get -y install build-essential
 
     - name: Build and run C action
-      run: gcc -o hello main.c && ./hello
+      shell: bash
+      run: |
+        gcc -o hello main.c
+        ./hello
