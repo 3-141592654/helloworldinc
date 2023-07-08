@@ -13,5 +13,5 @@ runs:
     - name: Build and run C action
       shell: bash
       run: |
-        gcc -o hello main.c
+        gcc main.c -o hello
         ./hello
