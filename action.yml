@@ -1,0 +1,11 @@
+name: C Hello World
+description: A GitHub Action written in C that prints "Hello, World!"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up C environment
+      run: sudo apt-get update && sudo apt-get -y install build-essential
+
+    - name: Build and run C action
+      run: gcc -o hello main.c && ./hello
